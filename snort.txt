@@ -1,0 +1,22 @@
+## En KALI
+sudo apt install snort
+https://http.kali.org/README.mirrorlist
+** deb https://kali.download/kali/ kali-rolling main contrib non-free
+** sudo apt-get update
+** sudo touch /etc/snort/rules/custom.rules
+** sudo mkdir /etc//snort/log
+** sudo snort -d -l /etc/snort/log/ -b -c /etc/snort/snort.conf
+** ls /etc/snort/log/
+** sudo nano /etc/snort/rules/custom.rules
+** sudo snort -k none -d -l /etc/snort/log/ -b -c /etc/snort/snort.conf
+** nc.exe -nlvp 4444
+** printf "test" | nc IP 4444
+** sudo cat /etc/snort/log/snort.alert.fast
+
+## En UBUNTU
+sudo apt update
+sudo apt install snort -y
+seleccionar sólo nuestra IP o un rango de IPs
+snort -V -> verificar estado de snort
+sudo systemctl daemon-reload -> Reload systemd configuration settings
+sudo systemctl enable --now snort3-nic.service -> Start and enable the service on boot with the following command
