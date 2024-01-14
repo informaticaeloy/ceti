@@ -1,8 +1,15 @@
 ## En KALI
 sudo apt install snort
-https://http.kali.org/README.mirrorlist
-** deb https://kali.download/kali/ kali-rolling main contrib non-free
-** sudo apt-get update
+-> editamos /etc/apt/sources.list y añadimos la siguiente línea:
+  deb https://kali.download/kali/ kali-rolling main contrib non-free
+(info sacada de https://http.kali.org/README.mirrorlist)
+Volvemos a actualizar
+sudo apt-get update
+y ya nos deja instalar con 
+sudo apt install snort
+
+A mitad de instalación, nos pregunta si es un análisis para el host o para una red
+
 ** sudo touch /etc/snort/rules/custom.rules
 ** sudo mkdir /etc//snort/log
 ** sudo snort -d -l /etc/snort/log/ -b -c /etc/snort/snort.conf
